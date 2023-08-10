@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, React } from "react";
+import { useState, useRef, React } from "react";
 import '/home/coder/project/workspace/reactapp/src/App.css';
 
 
@@ -39,7 +39,7 @@ export default function Stopwatch(props){
     };
 
     return(
-        <section id='stopwatch'>
+        <section id='Stopwatch'>
             <div className='inner' >
             <h1> React Stopwatch </h1>
 
