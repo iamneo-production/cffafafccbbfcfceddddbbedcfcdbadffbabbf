@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
 import Stopwatch from './components/Stopwatch/Stopwatch';
+import './App.css';
 
 function App() {
   return (
+    <div className ="container">
     <div className="App">
-      <p style={{display:'none'}}>learn react link</p>
       <Stopwatch />
+    </div>
     </div>
   );
 }

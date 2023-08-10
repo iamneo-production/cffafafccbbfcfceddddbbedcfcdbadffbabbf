@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, React } from "react";
-import '/home/coder/project/workspace/reactapp/src/App.css';
+import '/home/coder/project/workspace/reactapp/src/Stopwatch.css';
 
 
 export default function Stopwatch(props){
@@ -9,6 +9,19 @@ export default function Stopwatch(props){
     const [isActive, setIsActive] = useState(false)
     const [isPaused, setIsPaused] = useState(false)
     const increment = useRef(null)
+
+    useEffect(() => {
+      let interval = null;
+      if (isActive) {
+        interval = setInterval(() => {
+          setTime((time) => time + 1);
+        }, 1000);
+      } else if (!isActive && time !== 0) {
+        clearInterval(interval);
+      }
+      return () => clearInterval(interval);
+    }, [isActive, time]);
+  
 
 
     const handleStart = () => {
